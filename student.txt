@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_3
+{
+    class Student
+    {
+        public int Studentid { get; set; }
+        public string Studentname { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student = new Student();
+            Console.WriteLine("please enter Student ID");
+            student.Studentid = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("please enter Employee name");
+            student.Studentname = Console.ReadLine();
+
+            Console.WriteLine("Student Details are:-");
+            Console.WriteLine("Student ID :" + student.Studentid);
+            Console.WriteLine("Student name :" + student.Studentname);
+            Console.WriteLine();
+            Console.ReadLine();
+        }
+    }
+}

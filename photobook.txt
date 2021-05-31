@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_3
+{
+
+    public class photobook
+    {
+        private int npage=10;
+        public void getnumberpages()
+        {
+            Console.WriteLine("no.of pages in photo book are "+npage);
+        }
+        public photobook()
+        {
+            
+            Console.WriteLine("album contains 16 pages");
+        }
+        public photobook(int npages)
+        {
+            Console.WriteLine("album contains " + npages + "pages");
+        }
+    }
+    class bigphotobook:photobook
+    {
+        int alb;
+        public bigphotobook()
+        {
+            alb = 64;
+            Console.WriteLine("album contains "+alb+" pages");
+        }
+    }
+    class Photobooktest
+    {
+        static void Main(string[] args)
+        {
+            photobook p = new photobook();
+            photobook p1 = new photobook(24);
+            bigphotobook bp = new bigphotobook();
+            Console.ReadLine();
+        }
+
+    }
+
+
+}

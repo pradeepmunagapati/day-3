@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_3
+{
+    class shape
+    {
+
+        public int shapedata()
+        {
+            int length, breadth, side;
+            Console.WriteLine("Area of sqaure or rectangle");
+            Console.WriteLine("1. square 2. reactangle");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n == 1)
+            {
+                Console.WriteLine("Enter side");
+                side = Convert.ToInt32(Console.ReadLine());
+                return side;
+            }
+            else if (n == 2)
+            {
+                Console.WriteLine("Enter length");
+                length = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter breadth");
+                breadth = Convert.ToInt32(Console.ReadLine());
+                return length * breadth;
+            }
+            else
+            {
+                Console.WriteLine("enter 1 or 2");
+                return 0;
+            }
+
+        }
+        class rectangle : shape
+        {
+            public void rectarea(int rarea)
+            {
+                Console.WriteLine("Area of rectangle is" + rarea);
+            }
+        }
+        class square : shape
+        {
+            public void squarearea(int side)
+            {
+                Console.WriteLine("Area of square is" + side * side);
+            }
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int side, rarea;
+                square s1 = new square();
+                rectangle r1 = new rectangle();
+                side = s1.shapedata();
+                s1.squarearea(side);
+                rarea = r1.shapedata();
+                r1.rectarea(rarea);
+
+                Console.ReadLine();
+            }
+        }
+    }
+}

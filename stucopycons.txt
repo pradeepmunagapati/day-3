@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_3
+{
+    class Student
+    {
+        public int Studentid;
+        public string Studentname;
+
+        public Student(Student stu)  //Declaring copy constructor
+        {
+            Studentid = stu.Studentid;
+            Studentname = stu.Studentname;
+        }
+        public Student(int Studentid, string Studentname)  //Parametrised constructor
+        {
+            this.Studentid = Studentid;
+            this.Studentname = Studentname;
+        }
+        public void getstudentdata()
+        {
+            Console.WriteLine("please enter Student ID");
+            Studentid = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("please enter Employee name");
+            Studentname = Console.ReadLine();
+        }
+        public void printstudentdata()
+        {
+            Console.WriteLine("Student Details are:-");
+            Console.WriteLine("Student ID :" + Studentid);
+            Console.WriteLine("Student name :" + Studentname);
+
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student stu1 = new Student(101,"pradeep");
+            Student stu2 = new Student(stu1);
+            stu1.printstudentdata();
+            Console.ReadLine();
+        }
+    }
+}
